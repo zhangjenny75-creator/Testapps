@@ -105,7 +105,7 @@ def run_session(
     print(f'[3/3] Sending message: "{task}"\n')
     print("─" * 60)
 
-    with client.beta.sessions.stream(session_id) as stream:
+    with client.beta.sessions.events.stream(session_id) as stream:
         # Send the user message while the stream is already open
         client.beta.sessions.events.send(
             session_id,
