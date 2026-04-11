@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEO Tool — Make Your Social Posts Discoverable by ChatGPT, Claude & Perplexity</title>
+  <meta name="description" content="Generative Engine Optimization (GEO) for Facebook and Instagram. Score and rewrite your posts so LLMs like ChatGPT, Claude, Perplexity, and Gemini can find and cite them." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>GEO Tool</h1>
+    <p class="tagline">Make your social media content discoverable by ChatGPT, Claude, Perplexity & Gemini.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>What is Generative Engine Optimization (GEO)?</h2>
+      <p>
+        SEO got your content found in Google. <strong>GEO</strong> gets your content
+        cited by Large Language Models (LLMs) like ChatGPT, Claude, Perplexity, and
+        Gemini. Paste your Facebook or Instagram post below — we'll score it,
+        explain what to fix, and generate an LLM-friendly rewrite plus
+        structured-data markup for any page you link to.
+      </p>
+    </section>
+
+    <section class="input-area">
+      <label for="platform">Platform:</label>
+      <select id="platform">
+        <option value="general">General</option>
+        <option value="facebook">Facebook</option>
+        <option value="instagram">Instagram</option>
+      </select>
+
+      <label for="content">Your post content:</label>
+      <textarea
+        id="content"
+        rows="10"
+        placeholder="Paste your Facebook or Instagram caption here…"
+      ></textarea>
+
+      <div class="actions">
+        <button id="analyze-btn">Analyze GEO Score</button>
+        <button id="optimize-btn" class="secondary">Generate Optimized Version</button>
+        <button id="schema-btn" class="secondary">Generate Schema Markup</button>
+      </div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="score-card">
+        <div class="score-circle">
+          <span id="score-value">--</span>
+          <small id="score-grade">--</small>
+        </div>
+        <div class="score-details">
+          <h3>GEO Score</h3>
+          <p>Higher scores = more discoverable by LLMs.</p>
+          <ul id="quick-stats"></ul>
+        </div>
+      </div>
+
+      <div class="factors">
+        <h3>Factor Breakdown</h3>
+        <div id="factors-list"></div>
+      </div>
+
+      <div class="tips">
+        <h3>Top 3 Improvements</h3>
+        <ol id="improvements-list"></ol>
+      </div>
+
+      <div class="platform-tips">
+        <h3>Platform-Specific Tips</h3>
+        <ul id="platform-tips-list"></ul>
+      </div>
+    </section>
+
+    <section id="optimized-output" class="output hidden">
+      <h3>Optimized Version Template</h3>
+      <pre id="optimized-text"></pre>
+    </section>
+
+    <section id="schema-output" class="output hidden">
+      <h3>JSON-LD Schema Markup</h3>
+      <p class="hint">
+        Paste this <code>&lt;script&gt;</code> tag into the <code>&lt;head&gt;</code>
+        of any webpage you link from your social posts. LLMs use structured data
+        to understand and cite content.
+      </p>
+      <pre id="schema-text"></pre>
+      <button id="copy-schema-btn">Copy to clipboard</button>
+    </section>
+
+    <section class="learn-more">
+      <h2>Why this matters</h2>
+      <ul>
+        <li><strong>LLMs are the new search engines.</strong> People are asking ChatGPT instead of Googling.</li>
+        <li><strong>Social posts are training data.</strong> Public Facebook and Instagram content gets scraped, indexed, and cited.</li>
+        <li><strong>Structure beats clever copy.</strong> LLMs cite content that is factual, structured, and quotable — not the wittiest caption.</li>
+        <li><strong>Entities matter.</strong> Mentioning specific brands, people, places, and products links your content to known knowledge graph entries.</li>
+        <li><strong>Schema.org markup is the secret weapon.</strong> When you link from a social post to a webpage that has JSON-LD structured data, you 10x your chance of being cited.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>GEO Tool — Optimize for the AI-powered search era.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
