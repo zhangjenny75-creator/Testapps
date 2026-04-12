@@ -12,6 +12,7 @@ const {
   generateOptimizedVersion,
   generateSchema,
 } = require('./geo-analyzer');
+const { questions, studyResources } = require('./question-bank');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -59,6 +60,38 @@ app.post('/api/schema', (req, res) => {
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// ---- Daily Quiz endpoints ----
+
+// Get today's questions (5 per day, deterministic based on date)
+app.get('/api/daily-questions', (req, res) => {
+  const dateStr = req.query.date || new Date().toISOString().split('T')[0];
+  // Use date as seed to pick 5 questions deterministically
+  const seed = dateStr.split('-').reduce((acc, n) => acc + parseInt(n, 10), 0);
+  const shuffled = [...questions].sort((a, b) => {
+    const ha = ((a.id * seed) % 97) - ((b.id * seed) % 97);
+    return ha;
+  });
+  const daily = shuffled.slice(0, 5);
+  res.json({ date: dateStr, questions: daily });
+});
+
+// Get all questions (for browse/study mode)
+app.get('/api/questions', (req, res) => {
+  const { category } = req.query;
+  if (category) {
+    const filtered = questions.filter(q =>
+      q.category.toLowerCase() === category.toLowerCase()
+    );
+    return res.json({ questions: filtered });
+  }
+  res.json({ questions });
+});
+
+// Get study resources
+app.get('/api/resources', (_req, res) => {
+  res.json({ resources: studyResources });
 });
 
 // Health check

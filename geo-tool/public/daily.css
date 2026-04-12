@@ -1,0 +1,281 @@
+/* ---- Navigation ---- */
+.top-nav {
+  display: flex;
+  gap: 0;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+}
+
+.top-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 14px 20px;
+  font-weight: 600;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.top-nav a:hover { color: var(--text); }
+.top-nav a.active {
+  color: var(--accent-2);
+  border-bottom-color: var(--accent-2);
+}
+
+/* ---- Streak bar ---- */
+.streak-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.streak-info {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.streak-fire { font-size: 1.5rem; }
+
+.reminder-toggle button {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+}
+
+.reminder-toggle button.active-reminder {
+  background: var(--accent-2);
+  color: var(--bg);
+  border-color: var(--accent-2);
+}
+
+/* ---- Date navigation ---- */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: transparent;
+  border: none;
+  padding: 15px 0;
+}
+
+.date-nav button {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+#current-date {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+/* ---- Progress bar ---- */
+.progress-section {
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.progress-bar-outer {
+  width: 100%;
+  height: 12px;
+  background: var(--card-2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+#progress-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---- Question cards ---- */
+.question-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.question-card.answered-correct {
+  border-color: var(--accent-2);
+}
+
+.question-card.answered-wrong {
+  border-color: var(--danger);
+}
+
+.question-card.answered-correct .checkmark,
+.question-card.answered-wrong .checkmark {
+  display: flex;
+}
+
+.q-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.q-category {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  background: var(--card-2);
+  border-radius: 20px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.q-difficulty {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.q-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.q-text-zh {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.q-options {
+  list-style: none;
+  padding: 0;
+}
+
+.q-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.q-option:hover:not(:disabled) {
+  background: rgba(124, 92, 255, 0.15);
+  border-color: var(--accent);
+}
+
+.q-option:disabled { cursor: default; opacity: 0.85; }
+
+.q-option.selected-correct {
+  background: rgba(37, 208, 166, 0.2);
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+  font-weight: 600;
+}
+
+.q-option.selected-wrong {
+  background: rgba(255, 93, 122, 0.2);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.q-option.reveal-correct {
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.checkmark {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.checkmark.correct {
+  background: rgba(37, 208, 166, 0.1);
+  color: var(--accent-2);
+}
+
+.checkmark.wrong {
+  background: rgba(255, 93, 122, 0.1);
+  color: var(--danger);
+}
+
+.checkmark .explanation {
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 0.85rem;
+}
+
+.checkmark a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.checkmark a:hover { text-decoration: underline; }
+
+/* ---- Completion message ---- */
+.completion-msg {
+  text-align: center;
+  padding: 40px;
+}
+
+.completion-msg h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.completion-msg p { color: var(--muted); }
+
+.score-summary {
+  font-size: 1.2rem;
+  color: var(--accent-2) !important;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.loading {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px;
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 600px) {
+  .streak-bar { flex-direction: column; align-items: flex-start; }
+  .date-nav button { font-size: 0.75rem; padding: 6px 10px; }
+}

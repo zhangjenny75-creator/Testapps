@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily AI Quiz — GEO Tool Study Group</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="daily.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="/">GEO Analyzer</a>
+    <a href="/daily.html" class="active">Daily Quiz</a>
+    <a href="/resources.html">Study Resources</a>
+  </nav>
+
+  <header>
+    <h1>Daily AI Quiz</h1>
+    <p class="tagline">5 questions every day — check them off as you learn.</p>
+  </header>
+
+  <main>
+    <!-- Streak & reminder bar -->
+    <section class="streak-bar">
+      <div class="streak-info">
+        <span class="streak-fire">&#x1F525;</span>
+        <span id="streak-count">0</span> day streak
+      </div>
+      <div class="streak-info">
+        <span>&#x2705;</span>
+        <span id="total-answered">0</span> total answered
+      </div>
+      <div class="reminder-toggle">
+        <button id="reminder-btn">Set Daily Reminder</button>
+      </div>
+    </section>
+
+    <!-- Date navigation -->
+    <section class="date-nav">
+      <button id="prev-day">&larr; Previous Day</button>
+      <span id="current-date"></span>
+      <button id="next-day">Next Day &rarr;</button>
+    </section>
+
+    <!-- Today's progress -->
+    <section class="progress-section">
+      <div class="progress-bar-outer">
+        <div class="progress-bar-inner" id="progress-bar"></div>
+      </div>
+      <span id="progress-text">0 / 5 completed</span>
+    </section>
+
+    <!-- Questions -->
+    <section id="questions-container" class="questions-container">
+      <p class="loading">Loading today's questions...</p>
+    </section>
+
+    <!-- Completion message -->
+    <section id="completion-msg" class="completion-msg hidden">
+      <h2>&#127881; All done for today!</h2>
+      <p>Great work. Come back tomorrow for 5 new questions.</p>
+      <p class="score-summary">You got <span id="correct-count">0</span> / 5 correct today.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>GEO Tool — Daily AI Study Group</p>
+  </footer>
+
+  <script src="daily.js"></script>
+</body>
+</html>

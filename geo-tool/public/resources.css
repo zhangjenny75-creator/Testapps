@@ -1,0 +1,139 @@
+/* ---- Resources page ---- */
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+}
+
+.filter-btn {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.resource-category {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.resource-category h2 {
+  color: var(--accent-2);
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.resource-category .cat-zh {
+  color: var(--muted);
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.resource-item:hover {
+  border-color: var(--accent);
+}
+
+.resource-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.resource-name {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.resource-name-zh {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.resource-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-free {
+  background: rgba(37, 208, 166, 0.15);
+  color: var(--accent-2);
+}
+
+.badge-paid {
+  background: rgba(255, 181, 71, 0.15);
+  color: var(--warning);
+}
+
+.badge-level {
+  background: rgba(124, 92, 255, 0.15);
+  color: var(--accent);
+}
+
+.resource-link {
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.resource-link:hover {
+  opacity: 0.85;
+}
+
+.loading {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px;
+}
+
+@media (max-width: 600px) {
+  .resource-item { flex-direction: column; align-items: flex-start; }
+  .resource-meta { width: 100%; justify-content: space-between; }
+}

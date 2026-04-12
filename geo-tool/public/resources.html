@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Resources — GEO Tool Study Group</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="daily.css" />
+  <link rel="stylesheet" href="resources.css" />
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="/">GEO Analyzer</a>
+    <a href="/daily.html">Daily Quiz</a>
+    <a href="/resources.html" class="active">Study Resources</a>
+  </nav>
+
+  <header>
+    <h1>Study Resources</h1>
+    <p class="tagline">Free and affordable AI courses for foundation, international year one, and study groups.</p>
+    <p class="tagline" style="margin-top:6px">预科 / 国际大一 / Study Group 免费 AI 课程资源</p>
+  </header>
+
+  <main>
+    <section class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="free">Free Only</button>
+    </section>
+
+    <div id="resources-container">
+      <p class="loading">Loading resources...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>GEO Tool — AI Study Group Resources</p>
+  </footer>
+
+  <script src="resources.js"></script>
+</body>
+</html>
